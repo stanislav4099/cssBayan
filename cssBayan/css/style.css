@@ -1,1 +1,49 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 100%;
+}
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+label {
+  font-size: 1.3em;
+}
+h1 {
+  font-size: 2em;
+}
+.radioinput {
+  display: none;
+}
+.radioinput:checked + .img_mem {
+  display: block;
+}
+.img_mem {
+  display: none;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+}
+.label {
+  display: block;
+  background-color: grey;
+}
+.label:hover .img_mem {
+  display: block;
+}
+.description_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.icon {
+  background-image: url(../img/plus.svg);
+  background-color: transparent;
+  background-size: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 2em;
+  width: 2em;
+}
