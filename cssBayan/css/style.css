@@ -1,11 +1,12 @@
 body {
   font-family: "Ubuntu", sans-serif;
-  font-size: 50%;
+  font-weight: 700;
 }
 .wrapper {
   max-width: 60%;
   margin: 0 auto;
 }
+
 label {
   font-size: 1.3em;
 }
@@ -15,16 +16,24 @@ h1 {
 .radioinput {
   display: none;
 }
+
 .radioinput:checked + .img_mem {
-  display: block;
+  width: 10em;
+  height: 10em;
 }
+
+.label:has(.radioinput:checked) .icon {
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+
 .img_mem {
-  display: none;
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
   background-color: brown;
+  width: 0;
+  height: 0;
 }
+
 .label {
   display: block;
   border-top: 2px solid black;
@@ -45,10 +54,18 @@ h1 {
   background-position: center;
   height: 1em;
   width: 1em;
+  transition: all 0.3s;
 }
-.description {
-  color: blue;
+
+.label:hover:has(.radioinput:not(:checked)) .img_mem {
+  width: 10em;
+  height: 10em;
+  transition: all 0.3s;
 }
+.img_mem {
+  transition: all 0.3s;
+}
+
 @media (min-width: 320px) and (max-width: 820px) {
   body {
     font-size: 50%;
@@ -65,18 +82,45 @@ h1 {
   body {
     font-size: 100%;
   }
-  .icon {
-    display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .description {
+    color: blue;
+    transition: all 0.3s;
   }
 
-  .label:hover .img_mem {
-    display: block;
+  .icon {
+    opacity: 0;
+  }
+  .label:hover {
+    cursor: pointer;
   }
 
   .accordion:hover .icon {
-    display: block;
+    opacity: 1;
+    transition: all 0.3s;
   }
   .accordion:hover .description {
+    transition: all 0.3s;
     color: black;
   }
+  .label:hover .icon {
+    transform: rotate(45deg);
+    transition: all 0.3s;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .description {
+    color: black;
+  }
+}
+
+.label:active .description {
+  color: rgb(0, 132, 255);
+}
+.label:active .img_mem {
+  opacity: 0.3;
+  transition: 0.3s all;
 }

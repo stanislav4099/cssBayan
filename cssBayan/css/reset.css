@@ -6,7 +6,6 @@
 img,
 svg {
   display: block;
-  font-size: 0px;
   max-width: 100%;
   height: auto;
 }
