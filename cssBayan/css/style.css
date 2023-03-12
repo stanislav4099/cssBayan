@@ -12,14 +12,15 @@ label {
 }
 h1 {
   font-size: 2em;
+  padding: 0.5em;
 }
 .radioinput {
   display: none;
 }
 
 .radioinput:checked + .img_mem {
-  width: 10em;
-  height: 10em;
+  width: 25em;
+  height: 25em;
 }
 
 .label:has(.radioinput:checked) .icon {
@@ -29,15 +30,17 @@ h1 {
 
 .img_mem {
   margin: 0 auto;
-  background-color: brown;
   width: 0;
   height: 0;
+  padding: 0.2em;
+}
+.slide {
+  padding: 0.5em;
+  border-top: 2px solid black;
 }
 
 .label {
   display: block;
-  border-top: 2px solid black;
-  padding: 0.3em;
 }
 
 .description_icon {
@@ -58,8 +61,8 @@ h1 {
 }
 
 .label:hover:has(.radioinput:not(:checked)) .img_mem {
-  width: 10em;
-  height: 10em;
+  width: 25em;
+  height: 25em;
   transition: all 0.3s;
 }
 .img_mem {
@@ -69,6 +72,17 @@ h1 {
 @media (min-width: 320px) and (max-width: 820px) {
   body {
     font-size: 50%;
+  }
+
+  .radioinput:checked + .img_mem {
+    width: 17em;
+    height: 17em;
+  }
+
+  .label:hover:has(.radioinput:not(:checked)) .img_mem {
+    width: 17em;
+    height: 17em;
+    transition: all 0.3s;
   }
 }
 
@@ -86,7 +100,7 @@ h1 {
 
 @media (hover: hover) and (pointer: fine) {
   .description {
-    color: blue;
+    color: rgb(10, 162, 223);
     transition: all 0.3s;
   }
 
