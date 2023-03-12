@@ -29,6 +29,10 @@ h1 {
   transition: all 0.3s;
 }
 
+.label:has(.radioinput:checked) .description {
+  color: black;
+}
+
 .img_mem {
   margin: 0 auto;
   width: 0;
