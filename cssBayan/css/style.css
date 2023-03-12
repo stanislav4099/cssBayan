@@ -9,6 +9,7 @@ body {
 
 label {
   font-size: 1.3em;
+  padding: 0.5em;
 }
 h1 {
   font-size: 2em;
@@ -35,7 +36,6 @@ h1 {
   padding: 0.2em;
 }
 .slide {
-  padding: 0.5em;
   border-top: 2px solid black;
 }
 
@@ -60,7 +60,7 @@ h1 {
   transition: all 0.3s;
 }
 
-.label:hover:has(.radioinput:not(:checked)) .img_mem {
+.slide:hover:has(.radioinput:not(:checked)) .img_mem {
   width: 25em;
   height: 25em;
   transition: all 0.3s;
@@ -79,7 +79,7 @@ h1 {
     height: 17em;
   }
 
-  .label:hover:has(.radioinput:not(:checked)) .img_mem {
+  .slide:hover:has(.radioinput:not(:checked)) .img_mem {
     width: 17em;
     height: 17em;
     transition: all 0.3s;
@@ -107,7 +107,8 @@ h1 {
   .icon {
     opacity: 0;
   }
-  .label:hover {
+  .label:hover,
+  .slide.hover {
     cursor: pointer;
   }
 
