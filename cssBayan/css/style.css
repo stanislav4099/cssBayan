@@ -36,7 +36,7 @@ h1 {
   padding: 0.2em;
 }
 .slide {
-  border-top: 2px solid black;
+  border-top: 0.2em solid black;
 }
 
 .label {
