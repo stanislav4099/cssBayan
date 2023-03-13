@@ -1,0 +1,146 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+.wrapper {
+  max-width: 60%;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 1.3em;
+  padding: 0.5em;
+}
+h1 {
+  font-size: 2em;
+  padding: 0.5em;
+}
+.radioinput {
+  display: none;
+}
+
+.radioinput:checked + .img_mem {
+  width: 25em;
+  height: 25em;
+}
+
+.label:has(.radioinput:checked) .icon {
+  transform: rotate(45deg);
+  transition: all 0.3s;
+}
+
+.img_mem {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  padding: 0.2em;
+}
+.slide {
+  border-top: 0.2em solid black;
+}
+
+.label {
+  display: block;
+}
+
+.description_icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  background-image: url(../img/plus.svg);
+  background-color: transparent;
+  background-size: 1.5em;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 1em;
+  width: 1em;
+  transition: all 0.3s;
+}
+
+.slide:hover:has(.radioinput:not(:checked)) .img_mem {
+  width: 25em;
+  height: 25em;
+  transition: all 0.3s;
+}
+.img_mem {
+  transition: all 0.3s;
+}
+
+@media (min-width: 320px) and (max-width: 819px) {
+  body {
+    font-size: 50%;
+  }
+
+  .radioinput:checked + .img_mem {
+    width: 17em;
+    height: 17em;
+  }
+
+  .slide:hover:has(.radioinput:not(:checked)) .img_mem {
+    width: 17em;
+    height: 17em;
+    transition: all 0.3s;
+  }
+}
+
+@media (min-width: 820px) and (max-width: 1919px) {
+  body {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 100%;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .description {
+    color: rgb(10, 162, 223);
+    transition: all 0.3s;
+  }
+
+  .icon {
+    opacity: 0;
+  }
+  .label:hover,
+  .slide:hover {
+    cursor: pointer;
+  }
+
+  .accordion:hover .icon {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  .accordion:hover .description {
+    transition: all 0.3s;
+    color: black;
+  }
+  .label:hover .icon {
+    transform: rotate(45deg);
+    transition: all 0.3s;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .description {
+    color: black;
+  }
+}
+
+.label:has(.radioinput:checked) .description {
+  color: black;
+}
+
+.label:active:has(.radioinput) .description {
+  color: rgb(0, 132, 255);
+}
+
+.label:active .img_mem {
+  opacity: 0.3;
+  transition: 0.3s all;
+}
